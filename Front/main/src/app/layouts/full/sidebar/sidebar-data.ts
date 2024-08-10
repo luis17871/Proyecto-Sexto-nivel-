@@ -18,6 +18,16 @@ export const navItems: NavItem[] = [
     route: '/ui-components/badge',
   },
   {
+    displayName: 'Tareas',
+    iconName: 'check',
+    route: '/ui-components/task',
+  },
+  {
+    displayName: 'Chat',
+    iconName: 'brand-hipchat',
+    route: '/ui-components/chat',
+  },
+  {
     displayName: 'Chips',
     iconName: 'poker-chip',
     route: '/ui-components/chips',

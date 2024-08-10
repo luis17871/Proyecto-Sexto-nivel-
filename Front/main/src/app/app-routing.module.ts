@@ -19,11 +19,6 @@ const routes: Routes = [
           import('./pages/pages.module').then((m) => m.PagesModule),
       },
       {
-        path: 'chat',
-        loadChildren: () =>
-          import('./pages/pages.module').then((m) => m.PagesModule),
-      },
-      {
         path: 'ui-components',
         loadChildren: () =>
           import('./pages/ui-components/ui-components.module').then(

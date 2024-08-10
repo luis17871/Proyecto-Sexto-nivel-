@@ -1,55 +1,62 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../../material.module';
+
+// icons
 import { TablerIconsModule } from 'angular-tabler-icons';
 import * as TablerIcons from 'angular-tabler-icons/icons';
+
 import { UiComponentsRoutes } from './ui-components.routing';
-import { MatNativeDateModule } from '@angular/material/core';
-import { ScrollingModule } from '@angular/cdk/scrolling';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCardModule } from '@angular/material/card';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatListModule } from '@angular/material/list';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatDividerModule } from '@angular/material/divider';
-import { NgScrollbarModule } from 'ngx-scrollbar';
+
+// ui components
 import { AppBadgeComponent } from './badge/badge.component';
-import { RouterModule } from '@angular/router';
+import { AppChipsComponent } from './chips/chips.component';
+import { AppListsComponent } from './lists/lists.component';
+import { AppMenuComponent } from './menu/menu.component';
+import { AppTooltipsComponent } from './tooltips/tooltips.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import { AppBadgeComponent2 } from './badge copy/badge.component';
+import { AppTaskboardComponent } from './taskboard/taskboard.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { TaskDialogComponent } from './taskboard/task-dialog.component';
+import { OkAppTaskComponent } from './taskboard/ok-task/ok-task.component';
+import { DeleteAppTaskComponent } from './taskboard/delete-task/delete-task.component';
+import { AppChatComponent } from './chat/chat.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgScrollbarModule } from 'ngx-scrollbar';
 
 @NgModule({
   imports: [
-    CommonModule, // CommonModule en lugar de BrowserModule
-    FormsModule,
-    ReactiveFormsModule,
+    CommonModule,
     RouterModule.forChild(UiComponentsRoutes),
     MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
     TablerIconsModule.pick(TablerIcons),
     MatNativeDateModule,
-    ScrollingModule,
-    BrowserAnimationsModule,
-    MatCardModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatListModule,
-    MatMenuModule,
-    MatDividerModule,
+    MatDialogModule,
+    DragDropModule,
+    MatNativeDateModule,
     NgScrollbarModule,
+
+    
   ],
   declarations: [
-    AppBadgeComponent
-  ],
-  exports: [
-    AppBadgeComponent
+    AppBadgeComponent,
+    AppBadgeComponent2,
+    TaskDialogComponent,
+    OkAppTaskComponent,
+    DeleteAppTaskComponent,
+    AppChatComponent,
+    AppTaskboardComponent,
+    AppChipsComponent,
+    AppListsComponent,
+    AppMenuComponent,
+    AppTooltipsComponent,
   ],
 })
 export class UicomponentsModule {}

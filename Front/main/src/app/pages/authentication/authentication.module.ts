@@ -16,7 +16,6 @@ import { AuthenticationRoutes } from './authentication.routing';
 
 import { AppSideLoginComponent } from './login/login.component';
 import { AppSideRegisterComponent } from './register/register.component';
-import { AppChatComponent } from '../ui-components/chat/chat.component';
 
 @NgModule({
   imports: [
