@@ -22,7 +22,7 @@ import { UsuarioService } from 'src/services/usuario.service';
 export class AppHttpTableComponent implements AfterViewInit {
 
 
-  displayedColumns: string[] = ['nombre', 'apellido', 'rol', 'email', 'estado', 'acciones'];
+  displayedColumns: string[] = ['nombres', 'apellidos','telefono', 'rol', 'email', 'estado', 'acciones'];
   data: Usuario[] = [];
 
   resultsLength = 0;
@@ -38,18 +38,17 @@ export class AppHttpTableComponent implements AfterViewInit {
   loadAll(): void {
     this.sort.sortChange.subscribe(() => (this.paginator.pageIndex = 0));
 
-    merge(this.sort.sortChange, this.paginator.page)
+    merge()
       .pipe(
         startWith({}),
         switchMap(() => {
           this.isLoadingResults = true;
-          return this.usuarioService.getPokemonList(this.paginator.pageIndex);
+          return this.usuarioService.todos();
         }),
         map((data) => {
           this.isLoadingResults = false;
           this.isRateLimitReached = false;
-          this.resultsLength = data.totalElements;
-          return data.content;
+          return data;
         }),
         catchError(() => {
           this.isLoadingResults = false;

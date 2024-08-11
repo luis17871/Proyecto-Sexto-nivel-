@@ -43,13 +43,12 @@ export class AppGruposTableComponent implements AfterViewInit {
         startWith({}),
         switchMap(() => {
           this.isLoadingResults = true;
-          return this.usuarioService.getPokemonList(this.paginator.pageIndex);
+          return this.usuarioService.todos();
         }),
         map((data) => {
           this.isLoadingResults = false;
           this.isRateLimitReached = false;
-          this.resultsLength = data.totalElements;
-          return data.content;
+          return data;
         }),
         catchError(() => {
           this.isLoadingResults = false;

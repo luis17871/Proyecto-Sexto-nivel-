@@ -1,3 +1,3 @@
 export const environment = {
-    apiUrlBase: `http://localhost:8080/api/v1`
+    apiUrlBase: `http://localhost/Proyecto/Back/controllers`
 };
