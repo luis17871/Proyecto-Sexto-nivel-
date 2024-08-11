@@ -28,6 +28,9 @@ import { AppChatComponent } from './chat/chat.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgScrollbarModule } from 'ngx-scrollbar';
+import { MatIconModule } from '@angular/material/icon';
+import { AppPaginationTableComponent } from './pagination-table/pagination-table.component';
+import { AppHttpTableComponent } from './Usuarios/http-table.component';
 
 @NgModule({
   imports: [
@@ -42,6 +45,8 @@ import { NgScrollbarModule } from 'ngx-scrollbar';
     DragDropModule,
     MatNativeDateModule,
     NgScrollbarModule,
+    MatIconModule,
+
 
     
   ],
@@ -57,6 +62,7 @@ import { NgScrollbarModule } from 'ngx-scrollbar';
     AppListsComponent,
     AppMenuComponent,
     AppTooltipsComponent,
+    
   ],
 })
 export class UicomponentsModule {}

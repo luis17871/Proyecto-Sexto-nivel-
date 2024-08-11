@@ -1,0 +1,114 @@
+<mat-dialog-content style="max-width: 600px">
+  <form #form="ngForm">
+    <div class="d-flex align-items-center m-b-16">
+      
+      <!-- <button mat-flat-button color="primary" class="m-l-16 input-file-button">
+        <input type="file" (change)="selectFile($event)" #fileInput />
+      </button> -->
+    </div>
+    <div class="row">
+      <div class="col-lg-6" hidden>
+        <mat-form-field appearance="outline" class="w-100">
+          <input
+            type="text"
+            matInput
+            required
+            id="id"
+            name="id"
+            placeholder="Id"
+            [(ngModel)]="local_data.id"
+          />
+        </mat-form-field>
+      </div>
+      <div class="col-lg-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <input
+            type="text"
+            matInput
+            required
+            id="nombre"
+            name="nombre"
+            placeholder="Nombre"
+            [(ngModel)]="local_data.nombre"
+          />
+        </mat-form-field>
+      </div>
+      <div class="col-lg-6">
+        <mat-form-field appearance="outline" class="w-100">
+          
+          <input
+            type="text"
+            matInput
+            required
+            id="apellido"
+            name="apellido"
+            placeholder="Apellido"
+            [(ngModel)]="local_data.apellido"
+          />
+        </mat-form-field>
+      </div>
+      <div class="col-lg-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Rol</mat-label>
+          <mat-select [(ngModel)]="local_data.rol" name="rol">
+            <mat-option *ngFor="let role of roles" [value]="role">{{ role }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      
+      
+      
+      
+      <div class="col-lg-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <input
+            type="text"
+            matInput
+            required
+            id="email"
+            name="email"
+            placeholder="Email"
+            [(ngModel)]="local_data.email"
+          />
+        </mat-form-field>
+      </div>
+      @if (local_data.id) {
+
+      } @else {
+
+        <div class="col-lg-6">
+          <mat-form-field appearance="outline" class="w-100">
+            <input
+            type="password"
+            matInput
+            required
+            id="clave"
+            name="clave"
+            placeholder="********"
+            [(ngModel)]="local_data.clave"
+
+            />
+          </mat-form-field>
+        </div>
+      }
+    </div>
+    <button
+      mat-flat-button
+      mat-flat-button
+      color="primary"
+      (click)="doAction()"
+      [disabled]="!form.valid"
+
+    >
+      Guardar
+    </button>
+    <button
+      mat-stroked-button
+      color="warn"
+      class="m-l-8"
+      (click)="closeDialog()"
+    >
+      Cancel
+    </button>
+  </form>
+</mat-dialog-content>

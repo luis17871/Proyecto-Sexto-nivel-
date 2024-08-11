@@ -4,7 +4,8 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "strict": true,  // Mantén "strict" habilitado
+    "strictPropertyInitialization": false,  // Deshabilita solo la inicialización estricta de propiedades
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -31,6 +32,6 @@
   },
   "include": [
     "src/**/*.ts",
-    "src/typings.d.ts"  // Incluye tu archivo de declaración aquí
+    "src/typings.d.ts"
   ]
 }

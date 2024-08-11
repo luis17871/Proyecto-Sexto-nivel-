@@ -2,7 +2,7 @@ import { NavItem } from './nav-item/nav-item';
 
 export const navItems: NavItem[] = [
   {
-    navCap: 'Home',
+    navCap: 'Inicio',
   },
   {
     displayName: 'Dashboard',
@@ -18,9 +18,24 @@ export const navItems: NavItem[] = [
     route: '/ui-components/badge',
   },
   {
-    displayName: 'Tareas',
+    displayName: 'Usuarios',
+    iconName: 'users',
+    route: '/ui-components/user',
+  },
+  {
+    displayName: 'Grupos',
+    iconName: 'users-group',
+    route: '/ui-components/group',
+  },
+  {
+    displayName: 'TaskBoard',
     iconName: 'check',
     route: '/ui-components/task',
+  },
+  {
+    displayName: 'Tareas',
+    iconName: 'checklist',
+    route: '/ui-components/tabla',
   },
   {
     displayName: 'Chat',

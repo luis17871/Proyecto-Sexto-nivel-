@@ -9,6 +9,9 @@ import { AppTooltipsComponent } from './tooltips/tooltips.component';
 import { AppBadgeComponent2 } from './badge copy/badge.component';
 import { AppTaskboardComponent } from './taskboard/taskboard.component';
 import { AppChatComponent } from './chat/chat.component';
+import { AppPaginationTableComponent } from './pagination-table/pagination-table.component';
+import { AppHttpTableComponent } from './Usuarios/http-table.component';
+import { AppGruposTableComponent } from './Grupos/http-table.component';
 
 export const UiComponentsRoutes: Routes = [
   {
@@ -19,8 +22,20 @@ export const UiComponentsRoutes: Routes = [
         component: AppBadgeComponent2,
       },
       {
+        path: 'tabla',
+        component: AppPaginationTableComponent, 
+      },
+      {
         path: 'task',
         component: AppTaskboardComponent,
+      },
+      {
+        path: 'user',
+    component: AppHttpTableComponent,
+      },
+      {
+        path: 'group',
+    component: AppGruposTableComponent,
       },
       {
         path: 'chat',

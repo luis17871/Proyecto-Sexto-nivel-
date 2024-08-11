@@ -1,4 +1,4 @@
-<mat-card class="mat-card-top chat-app cardWithShadow">
+<mat-card class="mat-card-top chat-app cardWithShadow m-t-32">
   <mat-sidenav-container [ngClass]="{
       'side-panel-opened': sidePanelOpened,
       'side-panel-closed': !sidePanelOpened
@@ -69,7 +69,10 @@
     <!-- ------------------------------------------- -->
     <mat-toolbar class="no-shadow chat-right-panel bg-white d-flex align-items-center p-y-8 b-b-1">
       <button (click)="chatnav.toggle()" class="m-r-10" mat-icon-button>
-        <mat-icon>short_text</mat-icon>
+        
+        <mat-icon >
+          <i-tabler name="text-caption" class="icon-20"></i-tabler>
+        </mat-icon>
       </button>
       <div class="d-flex align-items-center">
         <img src="{{ selectedMessage.photo }}" width="40" class="rounded-circle" />
@@ -78,7 +81,9 @@
         </div>
       </div>
       <button [matMenuTriggerFor]="moredd" class="m-l-auto" mat-icon-button>
-        <mat-icon>more_vert</mat-icon>
+        <mat-icon >
+          <i-tabler name="dots-circle-horizontal" class="icon-20"></i-tabler>
+        </mat-icon>
       </button>
       <mat-menu #moredd="matMenu" x-position="before" class="cardWithShadow">
         <button mat-menu-item>Contact info</button>
@@ -131,7 +136,10 @@
         <mat-label>Message</mat-label>
         <input matInput placeholder="Send message" [(ngModel)]="msg" #myInput (keyup.enter)="OnAddMsg()" />
         <button mat-icon-button matSuffix color="primary" (click)="OnAddMsg()" [disabled]="!msg">
-          <mat-icon>send</mat-icon>
+          <mat-icon matSuffix>
+            <i-tabler name="send-2" class="icon-20"></i-tabler>
+          </mat-icon>
+
         </button>
       </mat-form-field>
     </div>
