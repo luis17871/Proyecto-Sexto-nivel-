@@ -36,3 +36,11 @@ export interface UsuarioResponseOne {
   numberOfElements: number;
   empty: boolean;
 }
+
+
+export interface login {
+  status: string;
+  token?: string;
+  message?: string;
+}
+

@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
-import { Usuario, UsuarioResponse } from 'src/interfaces/usuario.interface';
+import { login, Usuario, UsuarioResponse } from 'src/interfaces/usuario.interface';
 import { environment } from 'src/environments/environment.development';
 import { CookieService } from 'ngx-cookie-service';
 
@@ -40,6 +40,13 @@ export class UsuarioService {
     formData.append('id', id);
     return this.http.post(`${environment.apiUrlBase}/usuarios.controller.php?op=eliminar`, formData);
   };
+
+  login(nombreUsuario: String, Password: String): Observable<login> {
+    const formData = new FormData();
+    formData.append('nombreUsuario', nombreUsuario.toString());
+    formData.append('Password', Password.toString());
+    return this.http.post<login>(`${environment.apiUrlBase}/usuarios.controller.php?op=login`, formData);
+  }
 
   // getToken() {
   //   let token = this.cookieService.get('token');

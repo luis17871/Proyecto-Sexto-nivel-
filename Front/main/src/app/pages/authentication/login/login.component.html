@@ -34,32 +34,53 @@
 
           <div class="or-border m-t-30">o ingresa con</div>
 
-          <form class="m-t-30">
+          <form class="m-t-30 m-b-12"[formGroup]="form" (ngSubmit)="submit()">
             <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block"
-              >Usuario</mat-label
+              >Nombre de Usuario</mat-label
             >
             <mat-form-field appearance="outline" class="w-100" color="primary">
-              <input matInput />
+              <input matInput type="text" formControlName="nombreUsuario" />
+              @if(f['nombreUsuario'].touched && f['nombreUsuario'].invalid) {
+              <mat-hint class="m-0  error-msg " style="display: flex;  justify-content: flex-end; margin-top: 4px;">
+                @if( f['nombreUsuario'].errors && f['nombreUsuario'].errors['required'])
+                {
+                <div class="text-error">El nombre de Usuario es requerido</div>
+                }
+              </mat-hint>
+              }
             </mat-form-field>
             <!-- password -->
-            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block"
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block m-t-12"
               >Contraseña</mat-label
             >
             <mat-form-field appearance="outline" class="w-100" color="primary">
-              <input matInput type="password" />
+              <input matInput type="password" formControlName="password" />
+              @if(f['password'].touched && f['password'].invalid) {
+              <mat-hint class="m-0 error-msg" style="display: flex;  justify-content: flex-end; margin-top: 4px;">
+                @if( f['password'].errors && f['password'].errors['required'])
+                {
+                <div class="text-error">La Clave es requerida </div>
+                }
+              </mat-hint>
+              }
             </mat-form-field>
 
-            <div class="d-flex align-items-center m-b-12">
+            <!-- <div class="d-flex align-items-center m-b-12 m-t-12">
               <mat-checkbox color="primary">Recuerda mi usuario</mat-checkbox>
               <a
                 [routerLink]="['/']"
                 class="text-primary f-w-600 text-decoration-none m-l-auto f-s-14"
                 >Olvide mi Contraseña ?</a
               >
-            </div>
-            <a [routerLink]="['/']" mat-flat-button color="primary" class="w-100">
-              Ingresar
-            </a>
+            </div> -->
+            <button
+                mat-flat-button
+                color="primary"
+                class="w-100"
+                [disabled]="!form.valid"
+              >
+                Ingresar
+              </button>
             <!-- input -->
           </form>
           <span class="d-block f-w-500 text-center m-t-24"
