@@ -122,7 +122,7 @@
               <div class="d-flex align-items-center gap-8">
                 <!-- <i-tabler name="calendar-event" class="icon-18"></i-tabler
                 >{{ row.email }} -->
-                @if (row.estado ) {
+                @if (row.estado == 1 ) {
                     <a (click)="delete(row.id)" class="bg-light-primary text-primary rounded-pill p-x-8 p-y-4 f-s-12 f-w-500 cursor-pointer">
 
                       <span

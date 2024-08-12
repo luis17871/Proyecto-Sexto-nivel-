@@ -29,7 +29,7 @@
             id="nombre"
             name="nombre"
             placeholder="Nombre"
-            [(ngModel)]="local_data.nombre"
+            [(ngModel)]="local_data.nombres"
           />
         </mat-form-field>
       </div>
@@ -43,14 +43,14 @@
             id="apellido"
             name="apellido"
             placeholder="Apellido"
-            [(ngModel)]="local_data.apellido"
+            [(ngModel)]="local_data.apellidos"
           />
         </mat-form-field>
       </div>
       <div class="col-lg-6">
         <mat-form-field appearance="outline" class="w-100">
           <mat-label>Rol</mat-label>
-          <mat-select [(ngModel)]="local_data.rol" name="rol">
+          <mat-select [(ngModel)]="local_data.rol_nombre" name="rol">
             <mat-option *ngFor="let role of roles" [value]="role">{{ role }}</mat-option>
           </mat-select>
         </mat-form-field>
@@ -71,6 +71,48 @@
             [(ngModel)]="local_data.email"
           />
         </mat-form-field>
+      </div>
+      <div class="col-lg-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <input
+            type="text"
+            matInput
+            required
+            id="telefono"
+            name="telefono"
+            placeholder="Telefono"
+            [(ngModel)]="local_data.telefono"
+          />
+        </mat-form-field>
+       
+      </div>
+      <div class="col-lg-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <input
+            type="text"
+            matInput
+            required
+            id="nombreUsuario"
+            name="nombreUsuario"
+            placeholder="Nombre de usuario"
+            [(ngModel)]="local_data.nombreUsuario"
+          />
+        </mat-form-field>
+       
+      </div>
+      <div class="col-lg-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <input
+            type="text"
+            matInput
+            required
+            id="identificacion"
+            name="identificacion"
+            placeholder="Identificacion"
+            [(ngModel)]="local_data.identificacion"
+          />
+        </mat-form-field>
+       
       </div>
       @if (local_data.id) {
 

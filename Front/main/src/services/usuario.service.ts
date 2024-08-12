@@ -21,19 +21,24 @@ export class UsuarioService {
   }
 
   get(id: string): Observable<Usuario> {
-    return this.http.get<Usuario>(`${environment.apiUrlBase}/usuarios/${id}`);
+    const formData = new FormData();
+    formData.append('id', id);
+    return this.http.post<Usuario>(`${environment.apiUrlBase}/usuarios.controller.php?op=uno`, formData);
   }
+  
 
   create(usuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>(`${environment.apiUrlBase}/usuarios`, usuario);
+    return this.http.post<Usuario>(`${environment.apiUrlBase}/usuarios.controller.php?op=insertar`, usuario);
   };
 
   update(usuario: Usuario) {
-    return this.http.put<Usuario>(`${environment.apiUrlBase}/usuarios`, usuario);
+    return this.http.put<Usuario>(`${environment.apiUrlBase}/usuarios.controller.php?op=actualizar`, usuario);
   };
 
   delete(id: string) {
-    return this.http.delete(`${environment.apiUrlBase}/usuarios/${id}`);
+    const formData = new FormData();
+    formData.append('id', id);
+    return this.http.post(`${environment.apiUrlBase}/usuarios.controller.php?op=eliminar`, formData);
   };
 
   // getToken() {

@@ -76,8 +76,9 @@ export class AppHttpTableComponent implements AfterViewInit {
         // Suscribe a afterClosed() para manejar cualquier lógica después de que se cierre el diálogo
         dialogRef.afterClosed().subscribe((result) => {
           console.log(result);
-        console.log(result.data);
-        this.save(result.data);
+          this.save(result);
+        // console.log(result.data);
+        // this.save(result.data);
           // Aquí puedes manejar cualquier lógica después de que se cierre el diálogo
         });
       });
@@ -88,8 +89,9 @@ export class AppHttpTableComponent implements AfterViewInit {
       // Suscribe a afterClosed() para manejar cualquier lógica después de que se cierre el diálogo
       dialogRef.afterClosed().subscribe((result) => {
         console.log(result);
-        console.log(result.data);
-        this.save(result.data);
+        this.save(result);
+        // console.log(result.data);
+        // this.save(result.data);
         // Aquí puedes manejar cualquier lógica después de que se cierre el diálogo
       });
     }
@@ -139,7 +141,7 @@ export class AppKichenSinkDialogContentComponent2 {
   local_data: any;
   // selectedImage: any = '';
   joiningDate: any = '';
-  roles: string[] = ['ADMINISTRADOR', 'ENTRENADOR', 'RECEPCION'];
+  roles: string[] = ['Técnico', 'Administrador', 'Técnico', 'Soporte al Cliente', 'Vendedor'];
 
 
   constructor(
@@ -148,9 +150,9 @@ export class AppKichenSinkDialogContentComponent2 {
     @Optional() @Inject(MAT_DIALOG_DATA) public data: Usuario,
   ) {
     this.local_data = { ...data };
-    console.log(this.local_data.rol);
-    this.local_data.rol = this.getAdminRole();
-    console.log(this.local_data.rol);
+    // console.log(this.local_data.rol);
+    // this.local_data.rol = this.getAdminRole();
+    // console.log(this.local_data.rol);
     // this.action = this.local_data.action;
     
   }
@@ -166,27 +168,27 @@ export class AppKichenSinkDialogContentComponent2 {
 // app-kichen-sink-dialog-content.component.ts
 // rol: { authority: string }[] = [];
 
-getAdminRole(): string {
-  // Verificar si se han cargado datos en local_data.rol
-  if (!this.local_data || !this.local_data.rol) {
-    console.error('No se han cargado los datos correctamente.');
-    return '';
-  }
+// getAdminRole(): string {
+//   // Verificar si se han cargado datos en local_data.rol
+//   if (!this.local_data || !this.local_data.rol) {
+//     console.error('No se han cargado los datos correctamente.');
+//     return '';
+//   }
   
-  // Definir los roles que queremos buscar
-  const rolesABuscar = ['ADMINISTRADOR', 'ENTRENADOR', 'RECEPCION'];
+//   // Definir los roles que queremos buscar
+//   const rolesABuscar = ['ADMINISTRADOR', 'ENTRENADOR', 'RECEPCION'];
 
-  // Buscar entre los roles definidos
-  for (const role of rolesABuscar) {
-    const foundRole = this.local_data.rol.find((rol: { authority: string }) => rol.authority === `ROLE_${role}`);
-    if (foundRole) {
-      return role;
-    }
-  }
+//   // Buscar entre los roles definidos
+//   for (const role of rolesABuscar) {
+//     const foundRole = this.local_data.rol.find((rol: { authority: string }) => rol.authority === `ROLE_${role}`);
+//     if (foundRole) {
+//       return role;
+//     }
+//   }
 
-  // Si ninguno de los roles está presente, devolver una cadena vacía
-  return '';
-}
+//   // Si ninguno de los roles está presente, devolver una cadena vacía
+//   return '';
+// }
 
 
 

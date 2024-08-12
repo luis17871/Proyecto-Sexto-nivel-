@@ -5,7 +5,7 @@ export interface Usuario {
   apellido: string;
   rol_nombre: string; // Cambiado de 'rol' a 'rol_nombre'
   email: string;
-  estado?: string;
+  estado?: number;
   clave?: string;
 }
 

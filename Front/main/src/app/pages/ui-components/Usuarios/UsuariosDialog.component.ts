@@ -1,6 +1,6 @@
 import { CommonModule, DatePipe } from "@angular/common";
 import { Component, Inject, Optional } from "@angular/core";
-import { NgModel } from "@angular/forms";
+import { FormsModule, NgModel } from "@angular/forms";
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from "@angular/material/dialog";
 import { TablerIconsModule } from "angular-tabler-icons";
 import { MaterialModule } from "src/app/material.module";
@@ -9,7 +9,7 @@ import { Usuario } from "src/interfaces/usuario.interface";
 @Component({
     // tslint:disable-next-line: component-selector
     selector: 'app-dialog-content',
-  imports:[MaterialModule, CommonModule, TablerIconsModule,],
+  imports:[MaterialModule, CommonModule, TablerIconsModule,FormsModule],
   standalone: true,
     templateUrl: 'modal.html',
   })
@@ -20,6 +20,7 @@ import { Usuario } from "src/interfaces/usuario.interface";
     local_data: any;
     // selectedImage: any = '';
     joiningDate: any = '';
+roles: any;
   
     constructor(
       public datePipe: DatePipe,
