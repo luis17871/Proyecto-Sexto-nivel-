@@ -48,6 +48,10 @@ export class UsuarioService {
     return this.http.post<login>(`${environment.apiUrlBase}/usuarios.controller.php?op=login`, formData);
   }
 
+  isLoggedIn(): boolean {
+    // Comprobar si la cookie del token JWT está presente
+    return document.cookie.includes('token');
+  }
   // getToken() {
   //   let token = this.cookieService.get('token');
   //   console.log(token);
